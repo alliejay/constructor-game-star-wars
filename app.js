@@ -19,6 +19,7 @@ function Jedi(name) {
     } else {
     repeats.push(planet);
     if (planet === alderaan) {
+      points = -5000;
       console.log("Oh no, Something has gone terribly wrong. You were killed in a massive explosion just moments after reaching Alderaan. The galaxy is doomed.");
     } else {
       points += planet.points;
