@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="style.css" media="screen" title="no title" charset="utf-8">
+  </head>
+  <body>
+
+    <div class="game">
+      <section class="opening">
+        <h1>A long time ago in a galaxy far,<br>
+        far away...</h1>
+        <h2>
+        You are a Jedi.  Crisis is about to strike. Unless you can save the galaxy in time, there will be nothing left.
+        </h2>
+        <h3>
+        Travel around the galaxy in order to save us all and complete your mission.  At each stop, you have the option of attempting a special mission before moving on to the next location.  Remember, special missions are dangerous, and will not always work in your favor.
+        </h3>
+        <li id="start"><button type="submit" name="start">START </button></li>
+      </section>
+      <section class="instructions hidden">
+        <h3>Open the Console:</h3>
+        <h3>
+        1. Define your name:<br>
+        var YOU = new Jedi("YOURNAME");
+        </h3>
+        <h3>
+        2. Travel:<br> YOU.flyTo(LOCATION);
+        </h3>
+        <h3>
+        3. Optional special mission:<br> YOU.tryMission();
+        </h3>
+        <h3>
+        LOCATIONS:<br>
+        alderaan<br>
+        coruscant<br>
+        dagobah<br>
+        endor<br>
+        hoth<br>
+        kashyyyk<br>
+        naboo<br>
+        tatooine<br>
+        </h3>
+      </section>
+    </div>
+
+<!-- LIBRARIES -->
+      <script type="text/javascript" src="bower_components/jquery/dist/jquery.js"></script>
+      <script type="text/javascript" src="bower_components/underscore/underscore.js"></script>
+<!-- SCRIPTS -->
+      <script type="text/javascript" src="app.js"></script>
+  </body>
+</html>
