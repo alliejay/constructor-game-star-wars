@@ -1,13 +1,14 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>Something Of The Jedi</title>
     <link rel="stylesheet" href="style.css" media="screen" title="no title" charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
   <body>
 
-    <div class="game">
+    <div class="container">
       <section class="opening">
         <h1>A long time ago in a galaxy far,<br>
         far away...</h1>
@@ -19,30 +20,46 @@
         </h3>
         <li id="start"><button type="submit" name="start">START </button></li>
       </section>
+
       <section class="instructions hidden">
-        <h3>Open the Console:</h3>
-        <h3>
-        1. Define your name:<br>
-        var YOU = new Jedi("YOURNAME");
-        </h3>
-        <h3>
-        2. Travel:<br> YOU.flyTo(LOCATION);
-        </h3>
-        <h3>
-        3. Optional special mission:<br> YOU.tryMission();
-        </h3>
-        <h3>
-        LOCATIONS:<br>
-        alderaan<br>
-        coruscant<br>
-        dagobah<br>
-        endor<br>
-        hoth<br>
-        kashyyyk<br>
-        naboo<br>
-        tatooine<br>
-        </h3>
+        <ul>
+          <li id="alderaan"><img class="planet" src="img/alderaan.png" alt="" />
+          <br> <h4>Alderaan</h4>
+          </li>
+          <li id="coruscant"><img class="planet" src="img/coruscant.png" alt="" />
+          <br> <h4>Coruscant</h4>
+          </li>
+          <li id="dagobah"><img class="planet" src="img/dagobah.png" alt="" />
+          <br> <h4>Dagobah</h4>
+          </li>
+          <li id="endor"><img class="planet" src="img/endor.png" alt="" />
+          <br> <h4>Endor</h4>
+          </li>
+          <li id="hoth"><img class="planet" src="img/hoth.png" alt="" />
+          <br> <h4>Hoth</h4>
+          </li>
+          <li id="kashyyyk"><img class="planet" src="img/kashyyyk.png" alt="" />
+          <br> <h4>Kashyyyk</h4>
+          </li>
+          <li id="naboo"><img class="planet" src="img/naboo.png" alt="" />
+          <br> <h4>Naboo</h4>
+          </li>
+          <li id="tatooine"><img class="planet" src="img/tatooine.png" alt="" />
+          <br> <h4>Tatooine</h4>
+          </li>
+        </ul>
       </section>
+
+      <section class="spaceship hidden">
+
+
+        <section class="controlPanel">
+
+        </section>
+
+
+      </section>
+
     </div>
 
 <!-- LIBRARIES -->

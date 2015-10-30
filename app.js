@@ -1,9 +1,37 @@
-// OPENING
-$('.game').on('click', '#start', function(event) {
-  $(this).addClass('hidden');
-  $(this).parent('.opening').addClass('hidden');
-  $('.instructions').removeClass('hidden');
+$(document).ready(function () {
+  page.init();
 });
+
+var page = {
+  init: function () {
+    page.initStyling();
+    page.initEvents();
+  },
+
+  initStyling: function () {
+
+  },
+
+  initEvents: function () {
+    // OPENING
+    $('.container').on('click', '#start', function(event) {
+      $(this).addClass('hidden');
+      $(this).parent('.opening').addClass('hidden');
+      $('.instructions').removeClass('hidden');
+      $('.spaceship').removeClass('hidden');
+    });
+
+    // GOING TO A PLANET/MOON
+    $('.instructions').on('click', '.planet', function () {
+      console.log($(this).parent('li').id);
+    })
+  }
+};
+
+
+
+// OPENING
+
 
 // GAME
  var goal = 100;

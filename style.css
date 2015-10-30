@@ -2,6 +2,12 @@ body {
   background-color: black;
   font-family: sans-serif; }
 
+.container {
+  width: 99%;
+  height: auto;
+  margin: 0 auto;
+  padding: 0; }
+
 h1 {
   color: skyblue;
   font-size: 3em; }
@@ -15,11 +21,77 @@ h3 {
   font-size: 1.5em;
   font-weight: 200; }
 
-.hidden {
-  display: none; }
+h4 {
+  color: yellow;
+  font-size: 1em;
+  font-weight: 200;
+  margin: 2px 0 0 0;
+  padding: 0; }
 
 button {
   background-color: black;
   border: 1px solid yellow;
   color: yellow;
   font-size: 1em; }
+
+.instructions {
+  width: 95%;
+  height: 200px;
+  margin: 10px auto;
+  padding: 10px;
+  border: 5px solid lightgrey;
+  border-radius: 25%;
+  color: lightgrey;
+  background-image: url(img/galaxy.png);
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: cover; }
+
+.spaceship {
+  width: 95%;
+  height: 350px;
+  margin: 0 auto;
+  border: 5px solid lightgrey;
+  border-radius: 2%;
+  background-color: grey; }
+
+.controlPanel {
+  width: 80%;
+  height: 200px;
+  margin: 20px auto;
+  background-color: green;
+  border: 3px solid darkgreen;
+  opacity: .4;
+  border-radius: 2%; }
+
+ul {
+  -webkit-column-count: 8;
+  -moz-column-count: 8;
+  column-count: 8;
+  -webkit-column-gap: 1;
+  -moz-column-gap: 1;
+  column-gap: 1;
+  -webkit-column-rule: 0;
+  -moz-column-rule: 0;
+  column-rule: 0;
+  height: 200px;
+  list-style-type: none;
+  display: inline-block;
+  margin: 0;
+  padding: 10px; }
+  ul li {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    display: inline-block;
+    list-style-type: none;
+    text-align: center;
+    transition: all 1s ease-in-out; }
+    ul li img {
+      width: 100%;
+      margin: 0px; }
+    ul li:hover {
+      width: 110%; }
+
+.hidden {
+  display: none; }
