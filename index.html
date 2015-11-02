@@ -2,49 +2,89 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Something Of The Jedi</title>
+    <title> RETURN OF THE CODE </title>
+    <link href='https://fonts.googleapis.com/css?family=Play:400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="style.css" media="screen" title="no title" charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- TEMPLATES -->
+    <script type="text/html" id="planetTmpl">
+        <img id="imgTest" src="<%= url %>" alt="" />
+    </script>
+
+    <script type="text/html" id="alderaanTmpl">
+        <img id="explode" src="<%= url %>" alt="" />
+    </script>
+    <!-- END TEMPLATES -->
   </head>
   <body>
 
+<!-- BIG THANKS TO TIM PIETRUSKY WHO ALSO WROTE CODE TO CREATE THE STAR WARS OPENING CRAWLER: http://codepen.io/TimPietrusky/pen/eHGfj  -->
+
+<audio id="introAudio" autoplay>
+  <source src="http://s.cdpn.io/1202/Star_Wars_original_opening_crawl_1977.ogg" type="audio/mpeg">
+</audio>
+
+<!-- R2D2 SOUNDS SOUNDBOARD.COM -->
+<audio preload="auto" id="sound-1" ><source src="r2d2(1).mp3"></audio>
+<audio preload="auto" id="sound-2" ><source src="r2d2(2).mp3"></audio>
+<audio preload="auto" id="sound-3" ><source src="r2d2(3).mp3"></audio>
+  <audio preload="auto" id="laughing" ><source src="laughing.mp3"></audio>
+
+<!-- C3P0 SOUNDS SOUNDBOARD.COM -->
+<audio preload="auto" id="doomed" ><source src="doomed.mp3"></audio>
+<audio preload="auto" id="desolate" ><source src="desolate.mp3"></audio>
+<audio preload="auto" id="mess" ><source src="mess.mp3"></audio>
+<audio preload="auto" id="lang" ><source src="lang.mp3"></audio>
+
     <div class="container">
       <section class="opening">
-        <h1>A long time ago in a galaxy far,<br>
+        <h1 class="initialTitle">A long time ago in a galaxy far,<br>
         far away...</h1>
-        <h2>
-        You are a Jedi.  Crisis is about to strike. Unless you can save the galaxy in time, there will be nothing left.
-        </h2>
-        <h3>
-        Travel around the galaxy in order to save us all and complete your mission.  At each stop, you have the option of attempting a special mission before moving on to the next location.  Remember, special missions are dangerous, and will not always work in your favor.
-        </h3>
-        <li id="start"><button type="submit" name="start">START </button></li>
-      </section>
+
+        <div id="titles"><div id="titlecontent">
+          <p>
+            The Imperial Empire has once again tightened it's grip on the galaxy. After many years of growing their arsenal and resources, they are now ready to begin their final assault.  If they are not stopped, soon all life will succumb to their will. </p>
+            <p>
+            Unbeknownst to all, an ancient order of warriors who fought for peace and justice in the time of the Old Republic have been living in the shadows.  You are a product of this ancient order and the last hope to stop the evil empire once and for all.
+          </p>
+            <p>
+            You must travel around the galaxy in an effort to weed out the Imperial scum.  At each location you have the ability to deploy from the main station onto each planet.  You'll need to seek out natives for assistance with our mission.
+          </p>
+          <p>
+            You'll also have the option of attempting a Jedi quest.  If successful, you will empower the Jedi Rebellion and increase our odds of defeating the Imperial Galactic Empire.
+          </p>
+        </div>
+      </div>
+
+    </section>
+      <li id="start"><button type="submit" name="start">BEGIN JOURNEY </button></li>
+
+      <section class="visiting hidden"></section>
 
       <section class="instructions hidden">
         <ul>
-          <li id="alderaan"><img class="planet" src="img/alderaan.png" alt="" />
+          <li rel="Alderaan" class="local"><img src="img/alderaan.png" alt="" />
           <br> <h4>Alderaan</h4>
           </li>
-          <li id="coruscant"><img class="planet" src="img/coruscant.png" alt="" />
+          <li rel="Coruscant" class="local"><img src="img/coruscant.png" alt="" />
           <br> <h4>Coruscant</h4>
           </li>
-          <li id="dagobah"><img class="planet" src="img/dagobah.png" alt="" />
+          <li rel="Dagobah" class="local"><img src="img/dagobah.png" alt="" />
           <br> <h4>Dagobah</h4>
           </li>
-          <li id="endor"><img class="planet" src="img/endor.png" alt="" />
+          <li rel="Endor" class="local"><img src="img/endor.png" alt="" />
           <br> <h4>Endor</h4>
           </li>
-          <li id="hoth"><img class="planet" src="img/hoth.png" alt="" />
+          <li rel="Hoth" class="local"><img  src="img/hoth.png" alt="" />
           <br> <h4>Hoth</h4>
           </li>
-          <li id="kashyyyk"><img class="planet" src="img/kashyyyk.png" alt="" />
+          <li rel="Kashyyyk" class="local"><img  src="img/kashyyyk.png" alt="" />
           <br> <h4>Kashyyyk</h4>
           </li>
-          <li id="naboo"><img class="planet" src="img/naboo.png" alt="" />
+          <li rel="Naboo" class="local"><img src="img/naboo.png" alt="" />
           <br> <h4>Naboo</h4>
           </li>
-          <li id="tatooine"><img class="planet" src="img/tatooine.png" alt="" />
+          <li rel="Tatooine" class="local"><img src="img/tatooine.png" alt="" />
           <br> <h4>Tatooine</h4>
           </li>
         </ul>
@@ -52,15 +92,57 @@
 
       <section class="spaceship hidden">
 
+        <aside class="options">
+          <section class="pointCount">
+            <p>MISSION STATUS: 0% COMPLETE</p>
+          </section>
+          <section class="controlButtons">
+            <button class="controls" type="submit" name="back">EXIT ORBIT</button>
+            <button class="controls" type="submit" name="interaction">DEPLOY POD TO LOCATION</button>
+            <button class="controls" type="submit" name="try">INITIATE JEDI QUEST</button>
+
+            <section id="droidCam">
+              <p>DROID CAM:</p>
+              <img src="img/r2d2.png" alt="" id="speak"/>
+            </section>
+
+            <section id="compass">
+              <p>
+                TRACKING:
+              </p>
+              <img src="img/compass.png" alt=""/>
+            </section>
+
+            <section id="missile">
+              <p>
+                LAUNCH:
+              </p>
+              <img src="img/rocket.png" alt=""/>
+            </section>
+
+
+            </section>
+        </aside>
 
         <section class="controlPanel">
-
+          <section class="controlPanelTop">
+          </section>
+          <p>
+            MISSION CONTROL:
+          </p>
+          <section class="controlPanelBottom">
+          <p>
+          Master Jedi, we need to move it.  Tell me the location and I'll enter the coordinates.
+          </p>
         </section>
-
-
       </section>
-
     </div>
+
+<footer class="hidden">
+&copy; 2015 Alison Arsenault.<br>
+Star Wars is the property of <a href="https://thewaltdisneycompany.com/">The Walt Disney Company</a>.<br>
+R2D2, rocket & skull icons were created by Nick Frost & Greg Lapin of <a href="http://smallicons.net/">Smallicons</a>.
+</footer>
 
 <!-- LIBRARIES -->
       <script type="text/javascript" src="bower_components/jquery/dist/jquery.js"></script>

@@ -4,13 +4,17 @@ body {
 
 .container {
   width: 99%;
-  height: auto;
+  height: 100%;
   margin: 0 auto;
   padding: 0; }
 
+.opening {
+  width: 99%; }
+
 h1 {
   color: skyblue;
-  font-size: 3em; }
+  font-size: 3em;
+  padding-top: 400px; }
 
 h2 {
   color: yellow;
@@ -34,6 +38,60 @@ button {
   color: yellow;
   font-size: 1em; }
 
+.visiting {
+  width: 95%;
+  height: 200px;
+  margin: 10px auto;
+  padding: 10px;
+  border: 5px solid lightgrey;
+  border-radius: 25%;
+  color: lightgrey;
+  background-image: url(img/galaxy.png);
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: cover;
+  overflow: hidden;
+  position: relative; }
+
+#imgTest {
+  position: absolute;
+  top: -125px;
+  left: -75px;
+  -webkit-animation: grow 3s ease-in-out; }
+
+#explode {
+  position: absolute;
+  top: 50px;
+  left: 75px;
+  -webkit-animation: growTwo 3s ease-in-out forwards; }
+
+@-webkit-keyframes grow {
+  0% {
+    transform: scale(0.05); }
+  100% {
+    transform: scale(1); } }
+
+@-webkit-keyframes growTwo {
+  0% {
+    transform: scale(0.05); }
+  100% {
+    transform: scale(1.7); } }
+
+.css-typing {
+  width: 30em;
+  white-space: nowrap;
+  overflow: hidden;
+  -webkit-animation: type 5s steps(50, end);
+  animation: type 5s steps(50, end); }
+
+@keyframes type {
+  from {
+    width: 0; } }
+
+@-webkit-keyframes type {
+  from {
+    width: 0; } }
+
 .instructions {
   width: 95%;
   height: 200px;
@@ -45,7 +103,8 @@ button {
   background-image: url(img/galaxy.png);
   background-repeat: no-repeat;
   background-position: top;
-  background-size: cover; }
+  background-size: cover;
+  transition: all 1s ease-in-out; }
 
 .spaceship {
   width: 95%;
@@ -55,14 +114,108 @@ button {
   border-radius: 2%;
   background-color: grey; }
 
-.controlPanel {
+.pointCount {
   width: 80%;
-  height: 200px;
+  height: 50px;
   margin: 20px auto;
-  background-color: green;
+  background-color: #53804a;
   border: 3px solid darkgreen;
-  opacity: .4;
-  border-radius: 2%; }
+  border-radius: 5%;
+  font-family: 'Play', sans-serif;
+  font-weight: bold;
+  color: #253E1F; }
+  .pointCount p {
+    margin-left: 10px; }
+
+.options {
+  width: 39%;
+  display: inline-block; }
+
+.controlPanel {
+  width: 59%;
+  display: inline-block;
+  height: 310px;
+  margin: 20px auto;
+  background-color: #53804a;
+  border: 3px solid darkgreen;
+  border-radius: 2%;
+  font-family: 'Play', sans-serif;
+  font-weight: bold;
+  color: #253E1F; }
+  .controlPanel p {
+    margin-left: 10px; }
+
+.options, .controlPanel {
+  vertical-align: top; }
+
+.controlButtons {
+  width: 80%;
+  margin: 5px auto; }
+
+.controls {
+  width: 100%;
+  border-radius: 5%;
+  margin: 2.5px auto;
+  background-color: #38605B;
+  border: 1px solid #123D37;
+  color: #71908B;
+  transition: all 1s ease-in-out; }
+  .controls:hover {
+    background-color: #224942; }
+  .controls:active {
+    background-color: #123D37; }
+
+#droidCam {
+  width: 28%;
+  height: 140px;
+  display: inline-block;
+  margin: 10px auto;
+  background-color: #53804a;
+  border: 3px solid darkgreen;
+  border-radius: 2%;
+  font-family: 'Play', sans-serif;
+  font-weight: bold;
+  color: #253E1F;
+  float: left;
+  text-align: center; }
+  #droidCam img {
+    opacity: .7; }
+
+#missile {
+  width: 28%;
+  height: 140px;
+  display: inline-block;
+  margin: 10px auto;
+  background-color: #53804a;
+  border: 3px solid darkgreen;
+  border-radius: 2%;
+  font-family: 'Play', sans-serif;
+  font-weight: bold;
+  color: #253E1F;
+  float: left;
+  text-align: center; }
+  #missile img {
+    opacity: .7; }
+
+#compass {
+  width: 28%;
+  height: 140px;
+  display: inline-block;
+  margin: 10px;
+  background-color: #53804a;
+  border: 3px solid darkgreen;
+  border-radius: 2%;
+  font-family: 'Play', sans-serif;
+  font-weight: bold;
+  color: #253E1F;
+  float: left;
+  text-align: center; }
+  #compass img {
+    opacity: .7;
+    width: 65%;
+    transition: all 1s ease-in-out; }
+    #compass img:hover {
+      transform: rotate(180deg); }
 
 ul {
   -webkit-column-count: 8;
@@ -88,6 +241,7 @@ ul {
     text-align: center;
     transition: all 1s ease-in-out; }
     ul li img {
+      transition: all 1s ease-in-out;
       width: 100%;
       margin: 0px; }
     ul li:hover {
@@ -95,3 +249,68 @@ ul {
 
 .hidden {
   display: none; }
+
+#titles {
+  position: absolute;
+  width: 18em;
+  height: 50em;
+  bottom: 0;
+  left: 50%;
+  margin-left: -9em;
+  font-size: 350%;
+  color: yellow;
+  font-weight: bold;
+  text-align: justify;
+  overflow: hidden;
+  transform-origin: 50% 100%;
+  transform: perspective(300px) rotateX(25deg); }
+  #titles:after {
+    position: absolute;
+    content: ' ';
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 60%;
+    background-image: linear-gradient(top, black 0%, transparent 100%);
+    pointer-events: none; }
+
+#titlecontent {
+  position: absolute;
+  top: 100%;
+  animation: scroll 140s linear 8s forwards; }
+
+@keyframes scroll {
+  0% {
+    top: 100%; }
+  100% {
+    top: -170%; } }
+
+@-webkit-keyframes fade-in {
+  from {
+    opacity: 1; }
+  to {
+    opacity: 0; } }
+
+.initialTitle {
+  position: relative;
+  top: 200px;
+  left: 250px;
+  display: inline;
+  -webkit-animation: fade-in 11s forwards; }
+
+#start {
+  position: absolute;
+  top: 20px;
+  left: 45%; }
+
+footer {
+  width: 100%;
+  padding-top: 15px;
+  text-align: center;
+  font-family: 'Play', sans-serif;
+  font-size: .6em;
+  color: lightgrey; }
+  footer a {
+    color: lightgrey; }
+    footer a:visited {
+      color: lightgrey; }

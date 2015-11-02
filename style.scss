@@ -5,14 +5,19 @@ body {
 
 .container {
   width: 99%;
-  height: auto;
+  height: 100%;
   margin: 0 auto;
   padding: 0;
+}
+
+.opening {
+  width: 99%;
 }
 
 h1 {
   color: skyblue;
   font-size: 3em;
+  padding-top: 400px;
 }
 
 h2 {
@@ -41,6 +46,64 @@ button {
   font-size: 1em;
 }
 
+.visiting {
+  width: 95%;
+  height: 200px;
+  margin: 10px auto;
+  padding: 10px;
+  border: 5px solid lightgrey;
+  border-radius: 25%;
+  color: lightgrey;
+  background-image: url(img/galaxy.png);
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: cover;
+  overflow: hidden;
+  position: relative;
+}
+
+#imgTest {
+  position: absolute;
+  top: -125px;
+  left: -75px;
+  -webkit-animation: grow 3s ease-in-out;
+}
+
+#explode {
+  position: absolute;
+  top: 50px;
+  left: 75px;
+  -webkit-animation: growTwo 3s ease-in-out forwards;
+}
+
+@-webkit-keyframes grow {
+0% { transform: scale(.05) }
+100% { transform: scale(1) }
+}
+
+@-webkit-keyframes growTwo {
+0% { transform: scale(.05) }
+100% { transform: scale(1.7) }
+}
+
+// TYPING EFFECT
+  // Thanks to http://www.paulund.co.uk/create-typing-effect
+.css-typing {
+    width: 30em;
+    white-space:nowrap;
+    overflow:hidden;
+    -webkit-animation: type 5s steps(50, end);
+    animation: type 5s steps(50, end);
+}
+
+@keyframes type {
+    from { width: 0; }
+}
+
+@-webkit-keyframes type {
+    from { width: 0; }
+}
+
 .instructions {
   width: 95%;
   height: 200px;
@@ -53,6 +116,7 @@ button {
   background-repeat: no-repeat;
   background-position: top;
   background-size: cover;
+  transition: all 1s ease-in-out;
 }
 
 .spaceship {
@@ -64,14 +128,124 @@ button {
   background-color: grey;
 }
 
-.controlPanel {
+.pointCount {
   width: 80%;
-  height: 200px;
+  height: 50px;
   margin: 20px auto;
-  background-color: green;
+  background-color: #53804a;
   border: 3px solid darkgreen;
-  opacity: .4;
+  border-radius: 5%;
+  font-family: 'Play', sans-serif;
+  font-weight: bold;
+  color: #253E1F;
+  p {
+    margin-left: 10px;
+  }
+}
+
+.options {
+  width: 39%;
+  display: inline-block;
+}
+
+.controlPanel {
+  width: 59%;
+  display: inline-block;
+  height: 310px;
+  margin: 20px auto;
+  background-color: #53804a;
+  border: 3px solid darkgreen;
   border-radius: 2%;
+  font-family: 'Play', sans-serif;
+  font-weight: bold;
+  color: #253E1F;
+  p {
+    margin-left: 10px;
+  }
+}
+
+.options, .controlPanel {
+  vertical-align: top;
+}
+
+.controlButtons {
+  width: 80%;
+  margin: 5px auto;
+}
+
+.controls {
+  width: 100%;
+  border-radius: 5%;
+  margin: 2.5px auto;
+  background-color: #38605B;
+  border: 1px solid #123D37;
+  color: #71908B;
+  transition: all 1s ease-in-out;
+  &:hover {
+    background-color: #224942;
+  }
+  &:active {
+    background-color: #123D37;
+  }
+}
+
+#droidCam {
+  width: 28%;
+  height: 140px;
+  display: inline-block;
+  margin: 10px auto;
+  background-color: #53804a;
+  border: 3px solid darkgreen;
+  border-radius: 2%;
+  font-family: 'Play', sans-serif;
+  font-weight: bold;
+  color: #253E1F;
+  float: left;
+  text-align: center;
+  img {
+    opacity: .7;
+  }
+}
+
+#missile {
+  width: 28%;
+  height: 140px;
+  display: inline-block;
+  margin: 10px auto;
+  background-color: #53804a;
+  border: 3px solid darkgreen;
+  border-radius: 2%;
+  font-family: 'Play', sans-serif;
+  font-weight: bold;
+  color: #253E1F;
+  float: left;
+  text-align: center;
+  img {
+    opacity: .7;
+  }
+}
+
+#compass {
+  width: 28%;
+  height: 140px;
+  display: inline-block;
+  margin: 10px;
+  background-color: #53804a;
+  border: 3px solid darkgreen;
+  border-radius: 2%;
+  font-family: 'Play', sans-serif;
+  font-weight: bold;
+  color: #253E1F;
+  float: left;
+  text-align: center;
+  img {
+    opacity: .7;
+    width: 65%;
+    transition: all 1s ease-in-out;
+    &:hover {
+      transform: rotate(180deg);
+    }
+  }
 }
 
 ul {
@@ -98,6 +272,7 @@ ul {
     text-align: center;
     transition: all 1s ease-in-out;
     img {
+      transition: all 1s ease-in-out;
       width: 100%;
       margin: 0px;
     }
@@ -109,4 +284,83 @@ ul {
 
 .hidden {
   display: none;
+}
+
+// BIG THANKS TO CRAIG BUCKLER FOR THE FOLLOW CODE, A RECREATION OF THE STAR WARS OPENING CRAWLER
+// http://www.sitepoint.com/css3-starwars-scrolling-text/
+
+#titles{
+	position: absolute;
+	width: 18em;
+	height: 50em;
+	bottom: 0;
+	left: 50%;
+	margin-left: -9em;
+	font-size: 350%;
+  color: yellow;
+	font-weight: bold;
+	text-align: justify;
+	overflow: hidden;
+	transform-origin: 50% 100%;
+	transform: perspective(300px) rotateX(25deg);
+  &:after {
+    position: absolute;
+    content: ' ';
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 60%;
+    background-image: linear-gradient(top, rgba(0,0,0,1) 0%, transparent 100%);
+    pointer-events: none;
+  }
+}
+
+#titlecontent{
+	position: absolute;
+	top: 100%;
+	animation: scroll 140s linear 8s forwards;
+}
+
+@keyframes scroll {
+	0% { top: 100%; }
+	100% { top: -170%; }
+}
+
+// A long time ago...
+@-webkit-keyframes fade-in{
+  from{
+      opacity:1;
+  }
+  to{
+      opacity:0;
+  }
+}
+
+.initialTitle{
+position: relative;
+top: 200px;
+left: 250px;
+display:inline;
+-webkit-animation: fade-in 11s forwards;
+}
+
+#start {
+  position: absolute;
+  top: 20px;
+  left: 45%;
+}
+
+footer {
+  width: 100%;
+  padding-top: 15px;
+  text-align: center;
+  font-family: 'Play', sans-serif;
+  font-size: .6em;
+  color: lightgrey;
+  a {
+    color: lightgrey;
+    &:visited {
+      color: lightgrey;
+    }
+  }
 }
