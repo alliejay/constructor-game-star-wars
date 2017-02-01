@@ -17,7 +17,7 @@ You are a Jedi trying to save the galaxy. You must travel to various planets and
 * Once your mission progress goes below 0% you lose and have failed the entire galaxy. Good job. You'll have to refresh and try again if you want to redeem yourself. Even if you keep trying to go to new locations, your driod pilot will remind you that you're a failure.
 * Once your mission progress reaches 100% you win!
 
-### Play:
+### Play
 [Click here](http://alliejay.github.io/constructor-game-star-wars/) or choose to deploy locally with the instructions below.
 
 ### Deploy locally
