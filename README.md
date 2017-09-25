@@ -12,13 +12,14 @@ You are a Jedi trying to save the galaxy. You must travel to various planets and
 
 ### Rules
 * You can only visit each location once! If you try to visit the same place twice, your droid pilot will be sure to tell you that you're losing your marbles.
-* Similarly, you can only deploy to a location or initiate a Jedi quest at the same location once. If you try to do so, you're on board droid will scold you for wasting precious time.
-* Don't mess with the tracking or launch system! Those are for your droid pilot to control and he'll smartmouth you if you mess around. R2D2 is fair game, he has a few different opinions he'll voice if you hover over him.
-* Once your mission progress goes below 0% you lose and have failed the entire galaxy. Good job. You'll have to refresh and try again if you want to redeem yourself. Even if you keep trying to go to new locations, your droid pilot will remind you that you're a failure.
+* Similarly, you can only deploy to a location or initiate a Jedi quest at the same location once. If you try to do so, your on board droid will scold you for wasting precious time.
+* Don't mess with the tracking or launch system! Those are for your droid pilot to control and he'll smartmouth you if you mess around. R2D2 is fair game, he has a few different opinions he'll voice if you should choose to hear him.
+* Once your mission progress goes below 0% you lose and have failed the entire galaxy. Good job. You'll have to refresh and try again if you want to redeem yourself. If you keep trying to go to new locations, your droid pilot will be sure to remind you that you're a failure.
 * Once your mission progress reaches 100% you win!
 
 ### Play
 [Click here](http://alliejay.github.io/constructor-game-star-wars/) or choose to deploy locally with the instructions below.
+**Note that due to my beginner level skills at the time of making this game, you may need to resize your window for it to display properly.**
 
 ### Deploy locally
 1. Clone repo
